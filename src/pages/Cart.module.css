@@ -1,0 +1,332 @@
+.main { flex: 1; background: var(--cream); padding-top: var(--header-h); }
+
+.container {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 32px 24px 80px;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 48px;
+  font-weight: 300;
+  text-align: center;
+  color: var(--dark);
+  margin-top: 24px;
+  letter-spacing: -1px;
+}
+
+.sub {
+  text-align: center;
+  color: var(--gray);
+  font-size: 14px;
+  margin-top: 6px;
+  margin-bottom: 40px;
+}
+
+.empty {
+  text-align: center;
+  padding: 48px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  color: var(--gray);
+}
+
+.emptyLink {
+  color: var(--gold);
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.section { margin-bottom: 24px; }
+
+.sectionTitle {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--dark);
+  letter-spacing: 0.5px;
+  margin-bottom: 16px;
+  text-transform: lowercase;
+}
+
+.items {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.item {
+  display: flex;
+  gap: 16px;
+  padding: 20px;
+  border-bottom: 1px solid var(--gold-faint);
+  align-items: center;
+}
+.item:last-child { border-bottom: none; }
+
+.itemImg {
+  width: 72px;
+  height: 88px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background: linear-gradient(135deg, #e8e0d0, #d4c9b5);
+  flex-shrink: 0;
+}
+
+.itemImg img { width: 100%; height: 100%; object-fit: cover; }
+
+.itemInfo { flex: 1; min-width: 0; }
+
+.itemRef { font-size: 11px; color: var(--gray); letter-spacing: 0.3px; margin-bottom: 2px; }
+.itemName { font-size: 14px; font-weight: 500; color: var(--dark); }
+.itemSize { font-size: 12px; color: var(--gray); margin-top: 4px; }
+.itemPrice {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--dark);
+  margin-top: 6px;
+}
+
+.itemControls {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.qty {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--gray-light);
+  border-radius: var(--radius-pill);
+  padding: 4px 8px;
+}
+
+.qtyBtn {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--dark);
+  border-radius: 50%;
+  transition: background 0.15s;
+}
+.qtyBtn:hover { background: var(--gold-faint); color: var(--gold); }
+
+.qtyNum { font-size: 14px; font-weight: 500; min-width: 20px; text-align: center; }
+
+.removeBtn {
+  color: var(--gray);
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  transition: background 0.15s, color 0.15s;
+}
+.removeBtn:hover { background: #fde8e8; color: var(--error); }
+
+/* Summary */
+.summary {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.summaryRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  color: var(--dark);
+}
+
+.freeShipping { color: var(--success); font-weight: 500; }
+
+.totalRow {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 500;
+  border-top: 1px solid var(--gold-faint);
+  padding-top: 12px;
+  margin-top: 4px;
+}
+
+/* Calculadora de frete */
+.cepForm {
+  display: flex;
+  gap: 0;
+  border: 1.5px solid var(--gray-light);
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+  background: var(--white);
+  transition: border-color 0.2s;
+  margin-bottom: 12px;
+}
+
+.cepForm:focus-within { border-color: var(--gold); }
+
+.cepInput {
+  flex: 1;
+  padding: 12px 18px;
+  border: none;
+  background: transparent;
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--dark);
+  outline: none;
+  letter-spacing: 0.5px;
+}
+
+.cepInput::placeholder { color: var(--gray); }
+
+.cepBtn {
+  padding: 12px 20px;
+  background: var(--gold);
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, opacity 0.2s;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 96px;
+}
+
+.cepBtn:hover:not(:disabled) { background: var(--gold-light); }
+.cepBtn:disabled { opacity: 0.55; cursor: not-allowed; }
+
+.spinning {
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.shippingOptions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.shippingOpt {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  background: var(--white);
+  border-radius: var(--radius-md);
+  border: 1.5px solid var(--gray-light);
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+  user-select: none;
+}
+
+.shippingOptActive {
+  border-color: var(--gold);
+  background: var(--gold-faint);
+}
+
+.hiddenRadio {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.shippingDot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 1.5px solid var(--gray-light);
+  flex-shrink: 0;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.shippingOptActive .shippingDot {
+  border-color: var(--gold);
+  background: var(--gold);
+  box-shadow: inset 0 0 0 3px var(--gold-faint);
+}
+
+.shippingInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.shippingLabel {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--dark);
+}
+
+.shippingDays {
+  font-size: 11px;
+  color: var(--gray);
+}
+
+.shippingPrice {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--dark);
+  flex-shrink: 0;
+}
+
+.free { color: var(--success); font-family: var(--font-body); font-size: 13px; font-weight: 600; }
+
+/* Actions — correct hierarchy */
+.actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.primaryBtn {
+  width: 100%;
+  height: 56px;
+  border-radius: var(--radius-pill);
+  background: var(--gold);
+  color: var(--white);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border: none;
+  transition: background 0.2s;
+}
+.primaryBtn:hover { background: var(--gold-light); }
+
+.secondaryBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+  color: var(--gray);
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.secondaryBtn:hover { color: var(--gold); }

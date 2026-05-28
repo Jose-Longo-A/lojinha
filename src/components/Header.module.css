@@ -1,0 +1,252 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: rgba(255,255,255,0.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--gray-light);
+}
+
+/* Faixa promocional */
+.promoBar {
+  height: var(--promo-h);
+  background: var(--gold);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.promoTrack {
+  display: flex;
+  animation: marquee 32s linear infinite;
+  white-space: nowrap;
+}
+
+.promoText {
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 1.6px;
+  color: var(--white);
+  text-transform: uppercase;
+  padding-right: 0;
+  flex-shrink: 0;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* Barra de navegação */
+.inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  height: var(--nav-h);
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.hamburger {
+  display: none;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  color: var(--dark);
+  border-radius: var(--radius-pill);
+  transition: background 0.15s;
+  flex-shrink: 0;
+}
+
+.hamburger:hover { background: var(--gold-faint); }
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--dark);
+  flex-shrink: 0;
+}
+
+.logoText {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.logoText strong {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 22px;
+  letter-spacing: -0.3px;
+}
+
+.logoText small {
+  font-family: var(--font-body);
+  font-size: 8px;
+  letter-spacing: 2px;
+  font-weight: 500;
+  color: var(--gray);
+  text-transform: uppercase;
+}
+
+.nav {
+  display: flex;
+  gap: 32px;
+}
+
+.navLink {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: var(--dark);
+  text-transform: uppercase;
+  padding: 4px 0;
+  border-bottom: 1.5px solid transparent;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.navLink:hover {
+  color: var(--gold);
+  border-color: var(--gold);
+}
+
+.navSale { color: var(--error); }
+.navSale:hover { color: var(--error); border-color: var(--error); }
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.iconBtn {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--dark);
+  border-radius: var(--radius-pill);
+  transition: background 0.15s, color 0.15s;
+  position: relative;
+}
+
+.iconBtn:hover {
+  background: var(--gold-faint);
+  color: var(--gold);
+}
+
+.iconBtnActive {
+  background: var(--gold-faint);
+  color: var(--gold);
+}
+
+.badge {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 16px;
+  height: 16px;
+  background: var(--gold);
+  color: var(--white);
+  font-size: 10px;
+  font-weight: 600;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.badgeHeart { background: #d94f70; }
+
+/* Barra de busca */
+.searchBar {
+  overflow: hidden;
+  border-top: 1px solid var(--gray-light);
+}
+
+.searchForm {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 32px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.searchInput {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--dark);
+  outline: none;
+}
+
+.searchInput::placeholder { color: var(--gray); }
+
+.searchSubmitBtn {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: var(--gold);
+  padding: 7px 16px;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid var(--gold);
+  background: transparent;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  flex-shrink: 0;
+}
+
+.searchSubmitBtn:hover {
+  background: var(--gold);
+  color: var(--white);
+}
+
+/* Menu mobile */
+.mobileMenu {
+  border-top: 1px solid var(--gray-light);
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+}
+
+.mobileLink {
+  padding: 16px 32px;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: var(--dark);
+  border-bottom: 1px solid var(--gray-light);
+  transition: color 0.2s, background 0.2s;
+}
+
+.mobileLink:last-child { border-bottom: none; }
+.mobileLink:hover { color: var(--gold); background: var(--gold-faint); }
+
+.mobileSale { color: var(--error); }
+.mobileSale:hover { color: var(--error); background: #fef2f2; }
+
+@media (max-width: 768px) {
+  .nav { display: none; }
+  .hamburger { display: flex; }
+  .inner { padding: 0 20px; }
+  .searchForm { padding: 0 20px; }
+}

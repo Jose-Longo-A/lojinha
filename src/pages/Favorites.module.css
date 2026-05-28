@@ -1,0 +1,128 @@
+.main {
+  flex: 1;
+  background: var(--cream);
+  padding-top: var(--header-h);
+}
+
+.container {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 48px 32px 80px;
+  width: 100%;
+}
+
+/* Cabeçalho */
+.header {
+  margin-bottom: 40px;
+}
+
+.titleRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.titleIcon { color: #d94f70; }
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 400;
+  color: var(--dark);
+  letter-spacing: -0.5px;
+}
+
+.sub {
+  font-size: 14px;
+  color: var(--gray);
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.footer {
+  margin-top: 48px;
+  display: flex;
+  justify-content: center;
+}
+
+.footerLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--gold);
+  transition: opacity 0.2s;
+}
+
+.footerLink:hover { opacity: 0.7; }
+
+/* Empty state */
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 80px 20px;
+  gap: 16px;
+}
+
+.emptyIcon {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background: #fde8f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #d94f70;
+  margin-bottom: 8px;
+}
+
+.emptyTitle {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 400;
+  color: var(--dark);
+  font-style: italic;
+}
+
+.emptyText {
+  font-size: 14px;
+  color: var(--gray);
+  line-height: 1.65;
+  max-width: 320px;
+}
+
+.emptyBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 13px 28px;
+  border: 1.5px solid var(--gold);
+  border-radius: var(--radius-pill);
+  color: var(--gold);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  margin-top: 8px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.emptyBtn:hover { background: var(--gold); color: var(--white); }
+
+@media (max-width: 900px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .grid { grid-template-columns: 1fr; }
+  .container { padding: 32px 20px 64px; }
+}
