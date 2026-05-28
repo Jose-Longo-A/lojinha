@@ -35,7 +35,7 @@ export default function Product() {
     )
   }
 
-  const { name, ref, price, sizes, images, description, available } = product
+  const { name, ref, price, sizes, images, description, available, stock, rating, ratingCount } = product
 
   async function handleAddToCart() {
     if (!selectedSize || loading) return
@@ -97,12 +97,48 @@ export default function Product() {
           <p className={s.ref}>ref {ref}</p>
           <h1 className={s.name}>{name}</h1>
 
+          {/* Rating */}
+          {rating != null && (
+            <div className={s.ratingRow}>
+              <div className={s.stars}>
+                {[1, 2, 3, 4, 5].map(i => {
+                  const fill = Math.min(1, Math.max(0, rating - (i - 1)))
+                  return (
+                    <span key={i} className={s.star}>
+                      <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                        <defs>
+                          <linearGradient id={`sg${id}${i}`} x1="0" x2="1" y1="0" y2="0">
+                            <stop offset={`${fill * 100}%`} stopColor="var(--gold)" />
+                            <stop offset={`${fill * 100}%`} stopColor="#D4D0C8" />
+                          </linearGradient>
+                        </defs>
+                        <path d="M7 1l1.55 3.14L12 4.74l-2.5 2.43.59 3.44L7 9l-3.09 1.61.59-3.44L2 4.74l3.45-.6z"
+                          fill={`url(#sg${id}${i})`} stroke="none" />
+                      </svg>
+                    </span>
+                  )
+                })}
+              </div>
+              <span className={s.ratingVal}>{rating.toFixed(1)}</span>
+              <span className={s.ratingCount}>({ratingCount} avaliações)</span>
+            </div>
+          )}
+
           <div className={s.pricing}>
             <p className={s.price}>{fmt(price)}</p>
             <p className={s.installment}>ou 2x de {fmt(price / 2)} sem juros</p>
           </div>
 
           <p className={s.description}>{description}</p>
+
+          {/* Estoque */}
+          {available && stock != null && (
+            <div className={`${s.stockBadge} ${stock <= 5 ? s.stockLow : ''}`}>
+              {stock <= 5
+                ? `⚠ Restam apenas ${stock} unidades`
+                : `✓ ${stock} unidades em estoque`}
+            </div>
+          )}
 
           {/* Size selector — inline, never modal */}
           <div className={s.sizeSection}>

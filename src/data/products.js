@@ -5,6 +5,9 @@ export const products = [
     ref: '337302_0010',
     price: 400,
     available: true,
+    stock: 8,
+    rating: 4.3,
+    ratingCount: 27,
     sizes: ['P', 'M', 'G'],
     images: [
       '/images/camisa-colorida.jpg',
@@ -19,6 +22,9 @@ export const products = [
     ref: '337302_0011',
     price: 400,
     available: false,
+    stock: 0,
+    rating: 4.7,
+    ratingCount: 43,
     sizes: ['P', 'M', 'G'],
     images: [
       '/images/calca-bege.jpg',
@@ -33,6 +39,9 @@ export const products = [
     ref: '337302_0012',
     price: 400,
     available: false,
+    stock: 0,
+    rating: 4.9,
+    ratingCount: 61,
     sizes: ['P', 'M', 'G'],
     images: [
       '/images/vestido-preto.jpg',
@@ -47,6 +56,9 @@ export const products = [
     ref: '337302_0013',
     price: 500,
     available: true,
+    stock: 3,
+    rating: 4.5,
+    ratingCount: 18,
     sizes: ['P', 'M', 'G'],
     images: [
       '/images/blazer-preto.jpg',

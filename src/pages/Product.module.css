@@ -89,6 +89,43 @@
   text-transform: uppercase;
 }
 
+.ratingRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.stars { display: flex; gap: 2px; align-items: center; }
+.star { display: inline-flex; }
+
+.ratingVal {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--dark);
+}
+
+.ratingCount {
+  font-size: 12px;
+  color: var(--gray);
+}
+
+.stockBadge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 500;
+  color: #2e7d32;
+  background: #e8f5e9;
+  padding: 6px 12px;
+  border-radius: var(--radius-pill);
+  width: fit-content;
+}
+
+.stockLow {
+  color: #b45309;
+  background: #fef3c7;
+}
+
 .name {
   font-family: var(--font-display);
   font-size: clamp(32px, 4vw, 48px);
